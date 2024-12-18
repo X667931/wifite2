@@ -1,5 +1,5 @@
 chardet==5.2.0
-pytest==8.3.2
-scapy==2.5.0
+pytest==8.3.4
+scapy==2.6.1
 argparse==1.4.0
-setuptools==72.2.0
+setuptools==75.6.0

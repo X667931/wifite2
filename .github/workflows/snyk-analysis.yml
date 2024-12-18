@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Harden Runner
-      uses: step-security/harden-runner@5c7944e73c4c2a096b17a9cb74d65b6c2bbafbde # v2.9.1
+      uses: step-security/harden-runner@0080882f6c36860b6ba35c610c98ce87d4e2f26f # v2.10.2
       with:
         egress-policy: audit
 
@@ -30,7 +30,7 @@ jobs:
       # Snyk can be used to break the build when it detects vulnerabilities.
       # In this case we want to upload the issues to GitHub Code Scanning
       continue-on-error: true
-      uses: snyk/actions/docker@ae9442546152ba9bb0a1c85e2672112c97e7a06d # master
+      uses: snyk/actions/docker@cdb760004ba9ea4d525f2e043745dfe85bb9077e # master
       env:
         # In order to use the Snyk Action you will need to have a Snyk API token.
         # More details in https://github.com/snyk/actions#getting-your-snyk-token
@@ -40,7 +40,7 @@ jobs:
         image: your/image-to-test
         args: --file=Dockerfile
     - name: Upload result to GitHub Code Scanning
-      uses: github/codeql-action/upload-sarif@29d86d22a34ea372b1bbf3b2dced2e25ca6b3384 # v3.26.1
+      uses: github/codeql-action/upload-sarif@df409f7d9260372bd5f19e5b04e83cb3c43714ae # v3.27.9
       with:
         file: .
         sarif: true
